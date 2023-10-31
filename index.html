@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Product preview card component</title>
+    <style>
+      body {
+        background-color: hsl(30, 38%, 92%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .container {
+        display: grid;
+        height: 420px;
+        width: 520px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        background-color: hsl(0, 0%, 100%);
+        border-radius: 10px;
+        text-align: left;
+      }
+      img {
+        height: 100%;
+        width: 100%;
+        border-radius: 10px 0 0 10px;
+      }
+      .minor {
+        font-family: "Montserrat", sans-serif;
+        color: hsl(228, 12%, 48%);
+        font-size: 10px;
+        letter-spacing: 3px;
+        margin-top: 20px;
+        margin-left: 20px;
+        font-weight: 700;
+      }
+      h1 {
+        font-family: "Fraunces", serif;
+        margin-top: 15px;
+        margin-left: 20px;
+        font-size: 35px;
+      }
+      .main-text {
+        margin-left: 20px;
+        font-size: 14px;
+        font-family: "Montserrat", sans-serif;
+        color: hsl(228, 12%, 48%);
+        line-height: 20px;
+        font-weight: 500;
+      }
+      .price {
+        margin-left: 20px;
+        position: relative;
+      }
+      h2 {
+        color: hsl(158, 36%, 37%);
+        font-family: "Fraunces", serif;
+      }
+      .beta {
+        color: hsl(228, 12%, 48%);
+        font-size: 12px;
+        position: absolute;
+        top: 28px;
+        right: 90px;
+      }
+      .cart {
+        height: 12px;
+        width: 12px;
+        padding-right: 3px;
+      }
+      .carting {
+        color: hsl(0, 0%, 100%);
+        text-align: center;
+        background-color: hsl(158, 36%, 37%);
+        border: solid hsl(158, 36%, 37%);
+        border-radius: 8px;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        font-size: 12px;
+        padding: 10px 0;
+        margin: 5px 20px;
+      }
+      .alpha,
+      .beta {
+        display: inline-block;
+      }
+
+      /* Media Query */
+
+      @media screen and (max-width: 525px) {
+        .container {
+          grid-template-columns: 1fr;
+          grid-template-rows: 1fr;
+          height: 620px;
+          width: 320px;
+        }
+        .picturearea {
+          content: url("./images/image-product-mobile.jpg");
+          border-radius: 10px 10px 0 0;
+          object-fit: cover;
+          height: 100%;
+          max-height: 100%;
+        }
+
+        .minor {
+          font-size: 12px;
+          padding-top: 5px;
+          margin-top: 12px;
+        }
+        h1 {
+          font-size: 30px;
+        }
+        .main-text {
+          font-size: 14px;
+          margin-right: 8px;
+        }
+        .beta {
+          font-size: 12px;
+          position: absolute;
+          top: 40%;
+          right: 50%;
+          margin-bottom: 0;
+        }
+        .alpha {
+          font-size: 18px;
+        }
+        .carting {
+          font-size: 10px;
+          padding: 10px 0;
+          margin: 0 30px;
+          margin-bottom: 25px;
+        }
+      }
+
+      @media screen and (max-width: 350px) {
+        .beta {
+          font-size: 10px;
+          position: absolute;
+          top: 40%;
+          right: 59%;
+        }
+        .alpha {
+          font-size: 12px;
+        }
+      }
+
+      @media screen and (max-width: 318px) {
+        h1 {
+          font-size: 25px;
+        }
+        .main-text {
+          font-size: 12px;
+        }
+        .alpha {
+          font-size: 10px;
+        }
+        .beta {
+          font-size: 9px;
+          position: absolute;
+          top: 40%;
+          right: 58%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <img
+        class="picturearea"
+        src="./images/image-product-desktop.jpg"
+        alt="perfume"
+      />
+
+      <div class="main">
+        <div class="pef"><p class="minor">PERFUME</p></div>
+
+        <div class="description"><h1>Gabrielle Essence Eau De Parfum</h1></div>
+
+        <div class="detail">
+          <p class="main-text">
+            A floral, solar and voluptuous interpretation composed by Olivier
+            Polge, Perfumer-Creator for the House of CHANEL.
+          </p>
+        </div>
+
+        <div class="price">
+          <div class="alpha"><h2>$149.99</h2></div>
+          <div class="beta">
+            <span class="lower-p"><s>$169.99</s></span>
+          </div>
+        </div>
+
+        <div class="carting">
+          <img class="cart" src="./images/icon-cart.svg" alt="cart" />
+          Add to Cart
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Rezo Money</a>.
+    </div> -->
+  </body>
+</html>
